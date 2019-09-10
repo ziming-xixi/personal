@@ -29,22 +29,18 @@ public class UrlUtil {
                 if (fileUrl.startsWith("http") || fileUrl.startsWith("ftp")) {
                     newFileUrl = fileUrl;
                     LOGGER.info("原文件url以http或ftp开头，返回原文件url：" + fileUrl);
-                    return newFileUrl;
                 }
 
                 if (fileUrl.startsWith("/")) {
                     newFileUrl = mapIPAndPort + fileUrl;
                     LOGGER.info("原文件url以\"/\"开头，映射后的文件url：" + newFileUrl);
-                    return newFileUrl;
                 }
 
             } else {
                 LOGGER.info("文件url或映射IP：port为空，返回空路径！");
-                return newFileUrl;
             }
         } catch (Exception e) {
             LOGGER.error(fileUrl + "---" + mapIPAndPort + "映射转换异常，返回空url！", e);
-            return newFileUrl;
         }
         return newFileUrl;
     }

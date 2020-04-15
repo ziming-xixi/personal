@@ -15,11 +15,6 @@ public class FtpClientFactory extends Object implements PoolableObjectFactory<FT
 
     public FtpClientFactory(FTPClientConfigure config) {
         this.logger = LoggerFactory.getLogger(FtpClientFactory.class);
-
-
-
-
-
         this.config = config;
     }
 
@@ -43,7 +38,7 @@ public class FtpClientFactory extends Object implements PoolableObjectFactory<FT
             }
             boolean result = ftpClient.login(this.config.getUsername(), this.config.getPassword());
             if (!result) {
-                throw new FTPClientException("ftpClient��������! userName:" + this.config.getUsername() + " ; password:" + this.config
+                throw new FTPClientException("ftpClient登录失败! userName:" + this.config.getUsername() + " ; password:" + this.config
                         .getPassword());
             }
             ftpClient.setFileType(this.config.getTransferFileType());

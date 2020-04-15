@@ -115,6 +115,13 @@
         </dependency>
         <!--apache commons>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>end-->
 
+        <!--Guava-->
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>20.0</version>
+        </dependency>
+
         <!--热部署-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
